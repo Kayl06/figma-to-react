@@ -1,4 +1,4 @@
-import Icon from "../images/icon.png";
+import Icon from "../assets/images/icon.png";
 import Button from "./Button"
 import { BiCube } from "react-icons/bi";
 import { BsPersonFill, BsPersonCircle } from "react-icons/bs";
