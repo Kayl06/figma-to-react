@@ -25,7 +25,7 @@ function FooterMenu() {
   ];
 
   const renderedMenuItems = footerMenuItems.map((item) => {
-    return <FooterMenuItems item={item} />;
+    return <FooterMenuItems key={item.name} item={item} />;
   });
 
   return (

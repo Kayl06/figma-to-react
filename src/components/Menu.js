@@ -1,11 +1,14 @@
-import Icon from "../assets/images/icon.png";
+import Icon from "../assets/images/icons/icon.png";
+import IconDark from "../assets/images/icons/icon-dark.png";
+import Route from "./Route";
 import Button from "./Button";
 import { BiCube } from "react-icons/bi";
 import { BsPersonFill } from "react-icons/bs";
 import { IoKey, IoPersonCircle } from "react-icons/io5";
 import MenuItems from "./MenuItems";
+import classNames from "classnames";
 
-function Menu() {
+function Menu({ className }) {
   const menuItems = [
     {
       icon: <BiCube className="h-[15px] w-[15px]" />,
@@ -33,13 +36,22 @@ function Menu() {
     return <MenuItems key={_index} item={item} />;
   });
 
+  const classes = classNames(
+    "__menu mx-auto flex justify-between items-center uppercase font-[700]",
+    className
+  );
+
   return (
-    <div
-      className="__menu max-w-[1200px] mx-auto flex justify-between items-center text-white uppercase font-[700] p-[58.5px]
-   __menu"
-    >
+    <div className={classes}>
       <div className="flex gap-[12px] __logo">
-        <img src={Icon} />
+        <Route path="/signup">
+          <img src={Icon} />
+        </Route>
+
+        <Route path="/">
+          <img src={IconDark} />
+        </Route>
+
         <span className="text-[14px]">Vandelay Industries</span>
       </div>
 
@@ -48,12 +60,23 @@ function Menu() {
       </div>
 
       <div className="__action">
-        <Button
-          rounded
-          className="text-[10px] w-[150px] justify-center bg-white text-[#2D3748]"
-        >
-          Free Download
-        </Button>
+        <Route path="/signup">
+          <Button
+            rounded
+            className="text-[10px] w-[150px] justify-center bg-white text-[#2D3748]"
+          >
+            Free Download
+          </Button>
+        </Route>
+
+        <Route path="/">
+          <Button
+            rounded
+            className="text-[10px] w-[150px] justify-center bg-[#2D3748] text-white"
+          >
+            Free Download
+          </Button>
+        </Route>
       </div>
     </div>
   );
