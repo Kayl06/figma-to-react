@@ -66,7 +66,7 @@ function SignUp() {
                 <input
                   type="text"
                   name="name"
-                  className="mt-1 px-[20px] py-[15.25px] rounded-[15px] bg-white border border-[1px] border-[#E2E8F0] text-[14px] placeholder-[#A0AEC0] placeholder:font-[400] focus:outline-none block w-full focus:ring-1"
+                  className="mt-1 px-[20px] py-[15.25px] rounded-[15px] bg-white border-[1px] border-[#E2E8F0] text-[14px] placeholder-[#A0AEC0] placeholder:font-[400] focus:outline-none block w-full focus:ring-1"
                   placeholder="Your full name"
                 />
               </div>
@@ -77,7 +77,7 @@ function SignUp() {
                 <input
                   type="email"
                   name="email"
-                  className="mt-1 px-[20px] py-[15.25px] rounded-[15px] bg-white border border-[1px] border-[#E2E8F0] text-[14px] placeholder-[#A0AEC0] placeholder:font-[400] focus:outline-none block w-full focus:ring-1"
+                  className="mt-1 px-[20px] py-[15.25px] rounded-[15px] bg-white border-[1px] border-[#E2E8F0] text-[14px] placeholder-[#A0AEC0] placeholder:font-[400] focus:outline-none block w-full focus:ring-1"
                   placeholder="Your email"
                 />
               </div>
@@ -88,35 +88,27 @@ function SignUp() {
                 <input
                   type="password"
                   name="password"
-                  className="mt-1 px-[20px] py-[15.25px] rounded-[15px] bg-white border border-[1px] border-[#E2E8F0] text-[14px] placeholder-[#A0AEC0] placeholder:font-[400] focus:outline-none block w-full focus:ring-1"
+                  className="mt-1 px-[20px] py-[15.25px] rounded-[15px] bg-white border-[1px] border-[#E2E8F0] text-[14px] placeholder-[#A0AEC0] placeholder:font-[400] focus:outline-none block w-full focus:ring-1"
                   placeholder="Your password"
                 />
               </div>
 
-              <div className="__remember_me">
-                <Switch name="toggleRememberMe">
-                  <span className="text-[12px] text-[#2D3748]">
-                    Remember me
-                  </span>
-                </Switch>
-              </div>
-
-              <div className="__signup_btn mt-[51px] mb-[22px]">
-                <Button
-                  primary
-                  className="text-[14px] w-full rounded-[12px] p-[15px] h-[45px] justify-center"
-                >
-                  <span className="text-[10px] font-[700] uppercase">
-                    Sign up
-                  </span>
-                </Button>
-              </div>
-
-              <label className="font-[400] text-[14px] text-[#A0AEC0]">
-                Already have an account?{" "}
-                <span className="text-[#4FD1C5] font-[700]">Sign in</span>
-              </label>
+              <Switch name="toggleRememberMe">
+                <span className="text-[12px] text-[#2D3748]">Remember me</span>
+              </Switch>
+              
+              <Button
+                primary
+                className="__signup_btn w-full mt-[36px] mb-[22px] rounded-[12px] p-[15px] h-[45px] justify-center text-[10px] font-[700] uppercase"
+              >
+                Sign up
+              </Button>
             </form>
+
+            <label className="text-[14px] text-[#A0AEC0]">
+              <span className="font-[400]">Already have an account? </span>
+              <span className="text-[#4FD1C5] font-[700]">Sign in</span>
+            </label>
           </div>
         </Panel>
       </div>
