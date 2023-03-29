@@ -22,7 +22,10 @@ function SignUp() {
 
   const renderedSocials = socials.map((social) => {
     return (
-      <div className="__fb rounded-[15px] border border-[#E2E8F0] p-[24px]">
+      <div
+        key={social.name}
+        className="__fb rounded-[15px] border border-[#E2E8F0] p-[24px]"
+      >
         <i>{social.icon}</i>
       </div>
     );
@@ -30,7 +33,7 @@ function SignUp() {
   return (
     <div className="__signup text-[#FFFF]">
       <div className="relative __bg_multi_lines mt-[24px]">
-        <Menu />
+        <Menu className="max-w-[1200px] p-[58.5px]" />
 
         <div className="__title text-center flex flex-col justify-center">
           <h1 className="text-[32px] font-[700]">Welcome!</h1>
@@ -94,7 +97,7 @@ function SignUp() {
               <Switch name="toggleRememberMe">
                 <span className="text-[12px] text-[#2D3748]">Remember me</span>
               </Switch>
-              
+
               <Button
                 primary
                 className="__signup_btn w-full mt-[36px] mb-[22px] rounded-[12px] p-[15px] h-[45px] justify-center text-[10px] font-[700] uppercase"
