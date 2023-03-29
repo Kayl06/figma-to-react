@@ -1,8 +1,8 @@
 function MenuItems({ item }) {
   return (
     <>
-      <a href="#" className="__menu_item flex items-center gap-[4px]">
-        <i className="h-[11px] w-[11px]">{item.icon}</i>
+      <a href="#" className="__menu_item hover:text-[#2D3748] flex items-center gap-[4px]">
+        <i>{item.icon}</i>
         {item.name}
       </a>
     </>

@@ -2,25 +2,25 @@ import Icon from "../assets/images/icon.png";
 import Button from "./Button"
 import { BiCube } from "react-icons/bi";
 import { BsPersonFill, BsPersonCircle } from "react-icons/bs";
-import { IoKey } from "react-icons/io5";
+import { IoKey, IoPersonCircle } from "react-icons/io5";
 import MenuItems from "./MenuItems";
 
 function Menu() {
   const menuItems = [
     {
-      icon: <BiCube />,
+      icon: <BiCube className="h-[15px] w-[15px]"/>,
       name: "Dashboard",
     },
     {
-      icon: <BsPersonFill />,
+      icon: <BsPersonFill className="h-[15px] w-[15px]"/>,
       name: "Profile",
     },
     {
-      icon: <BsPersonCircle />,
+      icon: <IoPersonCircle className="h-[15px] w-[15px]"/>,
       name: "Sign Up",
     },
     {
-      icon: <IoKey />,
+      icon: <IoKey className="h-[15px] w-[15px]"/>,
       name: "Sign In",
     },
   ];
@@ -31,7 +31,7 @@ function Menu() {
 
   return (
     <div
-      className="flex justify-between items-center text-white uppercase font-[700] mt-[24px] p-[58.5px]
+      className="__menu max-w-[1200px] mx-auto flex justify-between items-center text-white uppercase font-[700] p-[58.5px]
    __menu"
     >
       <div className="flex gap-[12px] __logo">

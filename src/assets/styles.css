@@ -1,0 +1,57 @@
+.__togle_switch {
+    --secondary-container: #ffffff;
+    --primary: #4fd1c5;
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 36px;
+    height: 18.5px;
+  }
+  
+  .__togle_switch input {
+    display: none;
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  .__togle_switch_slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--primary);
+    transition: 0.2s;
+    border-radius: 30px;
+  }
+  
+  .__togle_switch_slider:before {
+    position: absolute;
+    content: "";
+    height: .87em;
+    width: .9em;
+    border-radius: 20px;
+    left: 0.2em;
+    bottom: 0.1em;
+    background-color: #ffffff;
+    transition: 0.4s;
+  }
+  
+  .__togle_switch input:checked + .__togle_switch_slider::before {
+    background-color: #ffffff;
+  }
+  
+  .__togle_switch input:checked + .__togle_switch_slider {
+    background-color: var(--primary);
+  }
+  
+  .__togle_switch input:focus + .__togle_switch_slider {
+    box-shadow: 0 0 1px var(--secondary-container);
+  }
+  
+  .__togle_switch input:checked + .__togle_switch_slider:before {
+    transform: translateX(.9em);
+  }
+  
