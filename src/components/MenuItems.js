@@ -1,10 +1,12 @@
+import Link from "./Link";
+
 function MenuItems({ item }) {
   return (
     <>
-      <a href="#" className="__menu_item hover:text-[#2D3748] flex items-center gap-[4px]">
+      <Link to={item.path} className="__menu_item">
         <i>{item.icon}</i>
         {item.name}
-      </a>
+      </Link>
     </>
   );
 }

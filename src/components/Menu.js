@@ -1,27 +1,31 @@
 import Icon from "../assets/images/icon.png";
-import Button from "./Button"
+import Button from "./Button";
 import { BiCube } from "react-icons/bi";
-import { BsPersonFill, BsPersonCircle } from "react-icons/bs";
+import { BsPersonFill } from "react-icons/bs";
 import { IoKey, IoPersonCircle } from "react-icons/io5";
 import MenuItems from "./MenuItems";
 
 function Menu() {
   const menuItems = [
     {
-      icon: <BiCube className="h-[15px] w-[15px]"/>,
+      icon: <BiCube className="h-[15px] w-[15px]" />,
       name: "Dashboard",
+      path: "/dashboard",
     },
     {
-      icon: <BsPersonFill className="h-[15px] w-[15px]"/>,
+      icon: <BsPersonFill className="h-[15px] w-[15px]" />,
       name: "Profile",
+      path: "/profile",
     },
     {
-      icon: <IoPersonCircle className="h-[15px] w-[15px]"/>,
+      icon: <IoPersonCircle className="h-[15px] w-[15px]" />,
       name: "Sign Up",
+      path: "/signup",
     },
     {
-      icon: <IoKey className="h-[15px] w-[15px]"/>,
+      icon: <IoKey className="h-[15px] w-[15px]" />,
       name: "Sign In",
+      path: "/",
     },
   ];
 
@@ -44,7 +48,10 @@ function Menu() {
       </div>
 
       <div className="__action">
-        <Button rounded className="text-[10px] w-[150px] justify-center bg-white text-[#2D3748]">
+        <Button
+          rounded
+          className="text-[10px] w-[150px] justify-center bg-white text-[#2D3748]"
+        >
           Free Download
         </Button>
       </div>

@@ -5,18 +5,22 @@ function FooterMenu() {
     {
       icon: "",
       name: "About",
+      path: "/about",
     },
     {
       icon: "",
       name: "Privacy",
+      path: "/privacy",
     },
     {
       icon: "",
       name: "Blog",
+      path: "/blog",
     },
     {
       icon: "",
       name: "License",
+      path: "/license",
     },
   ];
 
@@ -29,7 +33,8 @@ function FooterMenu() {
       <div className="__container flex flex-column justify-between w-full">
         <div className="__credits text-[12px] order-1">
           <span>
-            &copy; 2022, Made with ❤️ by <b className="font-[700] text-[#4fd1c5]">Tektorch </b> for a better
+            &copy; 2022, Made with ❤️ by{" "}
+            <b className="font-[700] text-[#4fd1c5]">Tektorch </b> for a better
             web
           </span>
         </div>
