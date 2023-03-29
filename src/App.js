@@ -1,11 +1,18 @@
+import Route from "./components/Route";
 import "./assets/styles.css";
 import FooterMenu from "./components/FooterMenu";
-import SignUp from "./modules/SignUp";
+import SignUpPage from "./pages/SignUpPage";
+import SignInPage from "./pages/SignInPage";
 
 function App() {
   return (
     <div className="relative __hero container mx-xl-[24px] mx-auto">
-      <SignUp />
+      <Route path="/">
+        <SignInPage />
+      </Route>
+      <Route path="/signup">
+        <SignUpPage />
+      </Route>
 
       <FooterMenu />
     </div>

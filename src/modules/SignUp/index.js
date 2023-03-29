@@ -1,5 +1,3 @@
-import MultiLines1 from "../../assets/images/multi-lines-1.png";
-import MultiLines2 from "../../assets/images/multi-lines-2.png";
 import Menu from "../../components/Menu";
 import Panel from "../../components/Panel";
 import Switch from "../../components/Switch";
