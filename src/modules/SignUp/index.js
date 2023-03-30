@@ -40,11 +40,11 @@ function SignUp() {
   return (
     <div className="__signup text-[#FFFF]">
       <div className="relative __bg_multi_lines mt-[24px]">
-        <Menu className="max-w-[1200px] p-[58.5px]" />
+        <Menu className="max-w-[1200px] p-[58.5px] hidden lg:flex" />
 
-        <div className="__title text-center flex flex-col justify-center">
+        <div className="__title text-center flex flex-col justify-center lg:p-0 pt-[35px] px-[30px]">
           <h1 className="text-[32px] font-[700]">Welcome!</h1>
-          <div className="w-[25%] mx-auto mt-[9.5px]">
+          <div className="lg:w-[25%] mx-auto mt-[9.5px]">
             <span className="font-[300]">
               Use these awesome forms to login or create new account in your
               project for free.
