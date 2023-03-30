@@ -11,14 +11,14 @@ function SignIn() {
   const [password, handleChangePassword] = useInput("");
 
   return (
-    <div className="__sign_in flex text-[#2D3748]">
+    <div className="__sign_in flex lg:flex-row flex-col text-[#2D3748]">
       <Menu
-        className="absolute left-0 right-0 max-w-[987px] p-[20px] mt-[24px] rounded-[15px]"
+        className="absolute hidden lg:flex left-0 right-0 max-w-[987px] p-[20px] mt-[24px] rounded-[15px]"
         contentColor="dark"
       />
 
-      <div className="mt-[188px] w-1/2 justify-center flex-auto order-1">
-        <div className="flex flex-col xl:w-[35%] w-full md:px-[20px] ml-auto mr-[239px]">
+      <div className="lg:mt-[188px] mt-[50px] lg:w-1/2 w-full justify-end flex flex-row lg:order-1 order-2">
+        <div className="flex flex-col w-full xl:w-[80%] 2xl:w-[60%] lg:pr-[100px] 2xl:pr-[239px] px-[20px]">
           <div className="__title text-start flex flex-col justify-center">
             <h1 className="text-[32px] text-[#4FD1C5] font-[700]">
               Welcome Back
@@ -75,9 +75,13 @@ function SignIn() {
         </div>
       </div>
 
-      <div className="flex-auto __right_bg h-[872px] right-0 w-[862px] flex justify-center items-center order-2 bg-[#5CE1CA] rounded-bl-[25px] mb-[122px] ">
+      <div className="flex-auto __right_bg lg:h-[872px] h-[250px] right-0 lg:w-[862px] w-full flex justify-center items-center lg:order-2 order-1 bg-[#5CE1CA] lg:rounded-bl-[25px] rounded-none mb-[0] lg:mb-[122px] ">
         <div className="__logo_chakra">
-          <img src={ChakraLogo} alt="" />
+          <img
+            src={ChakraLogo}
+            alt="chakra-logo"
+            className=" lg:h-auto lg:w-auto w-[250px]"
+          />
         </div>
       </div>
     </div>
