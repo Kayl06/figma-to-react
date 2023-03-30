@@ -3,6 +3,7 @@ import Panel from "../../components/Panel";
 import Switch from "../../components/Switch";
 import Button from "../../components/Button";
 import { FaFacebook, FaApple, FaGoogle } from "react-icons/fa";
+import Link from "../../components/Link";
 
 function SignUp() {
   const socials = [
@@ -79,7 +80,7 @@ function SignUp() {
                   type="email"
                   name="email"
                   className="mt-1 px-[20px] py-[15.25px] rounded-[15px] bg-white border-[1px] border-[#E2E8F0] text-[14px] placeholder-[#A0AEC0] placeholder:font-[400] focus:outline-none block w-full focus:ring-1"
-                  placeholder="Your email"
+                  placeholder="Your email address"
                 />
               </div>
               <div className="text-start block mb-[24px]">
@@ -106,10 +107,12 @@ function SignUp() {
               </Button>
             </form>
 
-            <label className="text-[14px] text-[#A0AEC0]">
-              <span className="font-[400]">Already have an account? </span>
-              <span className="text-[#4FD1C5] font-[700]">Sign in</span>
-            </label>
+            <div className="text-[14px] text-[#A0AEC0] flex justify-center">
+              <span className="font-[400]">Already have an account?&nbsp;</span>
+              <Link to="/" className="text-[#4FD1C5] font-[700]">
+                Sign in
+              </Link>
+            </div>
           </div>
         </Panel>
       </div>

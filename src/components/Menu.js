@@ -1,6 +1,5 @@
 import Icon from "../assets/images/icons/icon.png";
 import IconDark from "../assets/images/icons/icon-dark.png";
-import Route from "./Route";
 import Button from "./Button";
 import { BiCube } from "react-icons/bi";
 import { BsPersonFill } from "react-icons/bs";
@@ -8,7 +7,7 @@ import { IoKey, IoPersonCircle } from "react-icons/io5";
 import MenuItems from "./MenuItems";
 import classNames from "classnames";
 
-function Menu({ className }) {
+function Menu({ className, contentColor = "light" }) {
   const menuItems = [
     {
       icon: <BiCube className="h-[15px] w-[15px]" />,
@@ -41,16 +40,15 @@ function Menu({ className }) {
     className
   );
 
+  const btnClasses = classNames("text-[10px] w-[150px] justify-center", {
+    "bg-white text-[#2D3748]": contentColor == "light",
+    "bg-[#2D3748] text-white": contentColor == "dark",
+  });
+
   return (
     <div className={classes}>
       <div className="flex gap-[12px] __logo">
-        <Route path="/signup">
-          <img src={Icon} />
-        </Route>
-
-        <Route path="/">
-          <img src={IconDark} />
-        </Route>
+        {contentColor === "light" ? <img src={Icon} /> : <img src={IconDark} />}
 
         <span className="text-[14px]">Vandelay Industries</span>
       </div>
@@ -60,23 +58,9 @@ function Menu({ className }) {
       </div>
 
       <div className="__action">
-        <Route path="/signup">
-          <Button
-            rounded
-            className="text-[10px] w-[150px] justify-center bg-white text-[#2D3748]"
-          >
-            Free Download
-          </Button>
-        </Route>
-
-        <Route path="/">
-          <Button
-            rounded
-            className="text-[10px] w-[150px] justify-center bg-[#2D3748] text-white"
-          >
-            Free Download
-          </Button>
-        </Route>
+        <Button rounded className={btnClasses}>
+          Free Download
+        </Button>
       </div>
     </div>
   );
