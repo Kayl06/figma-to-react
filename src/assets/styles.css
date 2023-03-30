@@ -67,8 +67,8 @@
 }
 
 .__sign_in .__right_bg {
-  /* background-image: url(./images/signin/multi-lines-vert1.png), url(./images/signin/multi-lines-vert1.png); */
-  background-image: url(./images/signin/multi-lines-vert1.png), url(./images/signin/multi-lines-vert2.png);
+  background-image: url(./images/signin/multi-lines-vert1.png),
+    url(./images/signin/multi-lines-vert2.png);
   background-repeat: no-repeat, no-repeat;
   background-position: center top, center top;
   background-size: 100% 100%;

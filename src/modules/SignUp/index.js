@@ -4,8 +4,14 @@ import Switch from "../../components/Switch";
 import Button from "../../components/Button";
 import { FaFacebook, FaApple, FaGoogle } from "react-icons/fa";
 import Link from "../../components/Link";
+import useInput from "../../hooks/use-input";
+import Input from "../../components/Input";
 
 function SignUp() {
+  const [name, handleChangeName] = useInput("");
+  const [email, handleChangeEmail] = useInput("");
+  const [password, handleChangePassword] = useInput("");
+
   const socials = [
     {
       icon: <FaFacebook className="w-[25px] h-[25px] text-[#2D3748]" />,
@@ -65,33 +71,36 @@ function SignUp() {
                 <span className="text-[14px] font-[400] mb-[5.5px] text-slate-700">
                   Name
                 </span>
-                <input
+                <Input
                   type="text"
                   name="name"
-                  className="mt-1 px-[20px] py-[15.25px] rounded-[15px] bg-white border-[1px] border-[#E2E8F0] text-[14px] placeholder-[#A0AEC0] placeholder:font-[400] focus:outline-none block w-full focus:ring-1"
                   placeholder="Your full name"
+                  value={name}
+                  onChange={handleChangeName}
                 />
               </div>
               <div className="text-start block mb-[24px]">
                 <span className="text-[14px] font-[400] mb-[5.5px] text-slate-700">
                   Email
                 </span>
-                <input
+                <Input
                   type="email"
                   name="email"
-                  className="mt-1 px-[20px] py-[15.25px] rounded-[15px] bg-white border-[1px] border-[#E2E8F0] text-[14px] placeholder-[#A0AEC0] placeholder:font-[400] focus:outline-none block w-full focus:ring-1"
+                  value={email}
                   placeholder="Your email address"
+                  onChange={handleChangeEmail}
                 />
               </div>
               <div className="text-start block mb-[24px]">
                 <span className="text-[14px] font-[400] mb-[5.5px] text-slate-700">
                   Password
                 </span>
-                <input
+                <Input
                   type="password"
                   name="password"
-                  className="mt-1 px-[20px] py-[15.25px] rounded-[15px] bg-white border-[1px] border-[#E2E8F0] text-[14px] placeholder-[#A0AEC0] placeholder:font-[400] focus:outline-none block w-full focus:ring-1"
+                  value={password}
                   placeholder="Your password"
+                  onChange={handleChangePassword}
                 />
               </div>
 

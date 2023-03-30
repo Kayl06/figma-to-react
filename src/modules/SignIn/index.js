@@ -1,10 +1,15 @@
-import ChakraLogo from "../../assets/images/signin/chakra-logo.png"
+import ChakraLogo from "../../assets/images/signin/chakra-logo.png";
 import Button from "../../components/Button";
+import Input from "../../components/Input";
 import Link from "../../components/Link";
 import Menu from "../../components/Menu";
 import Switch from "../../components/Switch";
+import useInput from "../../hooks/use-input";
 
 function SignIn() {
+  const [email, handleChangeEmail] = useInput("");
+  const [password, handleChangePassword] = useInput("");
+
   return (
     <div className="__sign_in flex text-[#2D3748]">
       <Menu
@@ -26,35 +31,26 @@ function SignIn() {
           <form className="__form_inputs mt-[36px]">
             <div className="text-start block mb-[24px]">
               <span className="text-[14px] font-[400] mb-[5.5px] text-slate-700">
-                Name
-              </span>
-              <input
-                type="text"
-                name="name"
-                className="mt-1 px-[20px] py-[15.25px] rounded-[15px] bg-white border-[1px] border-[#E2E8F0] text-[14px] placeholder-[#A0AEC0] placeholder:font-[400] focus:outline-none block w-full h-[50px] focus:ring-1"
-                placeholder="Your full name"
-              />
-            </div>
-            <div className="text-start block mb-[24px]">
-              <span className="text-[14px] font-[400] mb-[5.5px] text-slate-700">
                 Email
               </span>
-              <input
+              <Input
                 type="email"
                 name="email"
-                className="mt-1 px-[20px] py-[15.25px] rounded-[15px] bg-white border-[1px] border-[#E2E8F0] text-[14px] placeholder-[#A0AEC0] placeholder:font-[400] focus:outline-none block w-full h-[50px] focus:ring-1"
+                value={email}
                 placeholder="Your email address"
+                onChange={handleChangeEmail}
               />
             </div>
             <div className="text-start block mb-[24px]">
               <span className="text-[14px] font-[400] mb-[5.5px] text-slate-700">
                 Password
               </span>
-              <input
+              <Input
                 type="password"
                 name="password"
-                className="mt-1 px-[20px] py-[15.25px] rounded-[15px] bg-white border-[1px] border-[#E2E8F0] text-[14px] placeholder-[#A0AEC0] placeholder:font-[400] focus:outline-none block w-full h-[50px] focus:ring-1"
+                value={password}
                 placeholder="Your password"
+                onChange={handleChangePassword}
               />
             </div>
 
@@ -66,7 +62,7 @@ function SignIn() {
               primary
               className="__signup_btn w-full mt-[36px] mb-[22px] rounded-[12px] p-[15px] h-[45px] justify-center text-[10px] font-[700] uppercase"
             >
-              Sign up
+              Sign In
             </Button>
           </form>
 
