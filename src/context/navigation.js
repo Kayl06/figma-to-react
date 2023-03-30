@@ -10,7 +10,7 @@ function NavigationProvider({ children }) {
       setCurrentPath(window.location.pathname);
     };
 
-    window.addEventListener("popstate", handler); // popstate handles page back
+    window.addEventListener("popstate", handler);
 
     return () => {
       window.removeEventListener("popstate", handler);
@@ -18,7 +18,7 @@ function NavigationProvider({ children }) {
   }, []);
 
   const navigate = (to) => {
-    window.history.pushState({}, "", to); // pushState will redirect you to the page without full loading the page. 
+    window.history.pushState({}, "", to);
     setCurrentPath(to)
   };
 

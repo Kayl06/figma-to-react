@@ -6,7 +6,7 @@ import SignInPage from "./pages/SignInPage";
 
 function App() {
   return (
-    <div className="relative __hero container mx-xl-[24px] mx-auto">
+    <div className="relative __hero">
       <Route path="/">
         <SignInPage />
       </Route>
