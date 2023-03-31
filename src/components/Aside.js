@@ -9,9 +9,9 @@ function Aside() {
 
   return (
     <>
-      <div className="flex items-center justify-end mx-[10px] lg:hidden absolute right-0 mt-2">
+      <div className="flex items-center justify-end mx-[25px] lg:hidden absolute right-0 mt-2">
         <Button onClick={handleHamburgerMenuClick}>
-          <RiMenu5Line className="w-[35px] h-[35px]" />
+          <RiMenu5Line className="w-[30px] h-[30px]" />
         </Button>
       </div>
 
