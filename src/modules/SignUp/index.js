@@ -41,7 +41,7 @@ function SignUp() {
   return (
     <div className="__signup text-[#FFFF]">
       <div className="relative __bg_multi_lines mt-[24px]">
-        <Menu className="max-w-[1200px] p-[58.5px] hidden lg:flex" />
+        <Menu className="max-w-[1200px] p-[58.5px]" />
 
         <div className="__title text-center flex flex-col justify-center lg:p-0 pt-[35px] px-[30px]">
           <h1 className="text-[32px] font-[700]">Welcome!</h1>
@@ -53,7 +53,7 @@ function SignUp() {
           </div>
         </div>
 
-        <Panel className="__register_form text-[#2D3748] w-[452px] px-[51px] mx-auto rounded-[15px] mt-[66.5px] text-center" dropShadow={true}>
+        <Panel className="__register_form text-[#2D3748] w-full lg:w-[452px] px-[51px] mx-auto rounded-[15px] mt-[66.5px] text-center" dropShadow={true}>
           <div className="mt-[45.5px] pb-[45px]">
             <span className="__title font-[700] text-[18px]">
               Register with

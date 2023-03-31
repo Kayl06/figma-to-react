@@ -15,7 +15,7 @@ function SignIn() {
     <div>
       <div className="__sign_in flex lg:flex-row flex-col text-[#2D3748]">
         <Menu
-          className="absolute hidden lg:flex left-0 right-0 max-w-[987px] p-[20px] mt-[24px] rounded-[15px]"
+          className="absolute left-0 right-0 max-w-[987px] p-[20px] mt-[24px] rounded-[15px]"
           contentColor="dark"
         />
 
