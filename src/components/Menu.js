@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Icon from "../assets/images/icons/icon.png";
 import IconDark from "../assets/images/icons/icon-dark.png";
 import Button from "./Button";
@@ -8,13 +7,10 @@ import { IoKey, IoPersonCircle } from "react-icons/io5";
 import MenuItems from "./MenuItems";
 import classNames from "classnames";
 import { RiMenu5Line, RiCloseFill } from "react-icons/ri";
+import useToggle from "../hooks/use-toggle";
 
 function Menu({ className, contentColor = "light" }) {
-  const [isMenuOpen, setisMenuOpen] = useState(false);
-
-  const handleHamburgerMenuClick = () => {
-    setisMenuOpen(!isMenuOpen);
-  };
+  const [isMenuOpen, handleHamburgerMenuClick] = useToggle(false);
 
   const menuItems = [
     {
