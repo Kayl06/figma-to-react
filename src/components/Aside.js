@@ -41,7 +41,7 @@ function Aside() {
               >
                 <RiCloseFill className="w-[25px] h-[25px]" />
               </Button>
-              <div className="">
+              <div className="w-[300px]">
                 <Sidebar />
               </div>
             </div>

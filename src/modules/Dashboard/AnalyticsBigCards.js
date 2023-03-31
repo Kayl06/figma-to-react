@@ -78,7 +78,7 @@ function AnalyticsBigCards() {
             <span className="text-[#A0AEC0] font-[400]">than last week</span>
           </div>
 
-          <div className="__cards grid grid-cols-4 gap-[56px]">
+          <div className="__cards grid grid-cols-2 lg:grid-cols-4 gap-[56px]">
             {renderedCards}
           </div>
         </div>

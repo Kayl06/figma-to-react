@@ -4,6 +4,7 @@ import SignUpPage from "./pages/SignUpPage";
 import SignInPage from "./pages/SignInPage";
 import DashboardPage from "./pages/DashboardPage";
 import TablesPage from "./pages/TablesPage";
+import NotFoundPage from "./pages/NotFoundPage";
 import useNavigation from "./hooks/use-navigation";
 import classNames from "classnames";
 
@@ -34,6 +35,19 @@ function App() {
       <Route path="/tables">
         <TablesPage />
       </Route>
+     
+      <Route path="/billing">
+        <NotFoundPage />
+      </Route>
+      
+      <Route path="/rtl">
+        <NotFoundPage />
+      </Route>
+      
+      <Route path="/profile">
+        <NotFoundPage />
+      </Route>
+     
     </div>
   );
 }
