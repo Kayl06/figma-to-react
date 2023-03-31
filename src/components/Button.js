@@ -9,6 +9,7 @@ function Button({
   warning,
   danger,
   outline,
+  white,
   rounded,
   loading,
   ...rest
@@ -23,6 +24,7 @@ function Button({
       "border-green-500 bg-green-500 text-white": success,
       "border-yellow-400 bg-yellow-400 text-white": warning,
       "border-red-500 bg-red-500 text-white": danger,
+      "bg-white border-0 text-[#2D3748] text-center": white,
       "rounded-full": rounded,
       "bg-white": outline,
       "text-blue-500": outline && primary,
