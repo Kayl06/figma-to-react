@@ -6,6 +6,7 @@ import { FaFacebook, FaApple, FaGoogle } from "react-icons/fa";
 import Link from "../../components/Link";
 import useInput from "../../hooks/use-input";
 import Input from "../../components/Input";
+import FooterMenu from "../../components/FooterMenu";
 
 function SignUp() {
   const [name, handleChangeName] = useInput("");
@@ -52,7 +53,7 @@ function SignUp() {
           </div>
         </div>
 
-        <Panel className="__register_form text-[#2D3748] w-[452px] px-[51px] mx-auto rounded-[15px] mt-[66.5px] text-center">
+        <Panel className="__register_form text-[#2D3748] w-[452px] px-[51px] mx-auto rounded-[15px] mt-[66.5px] text-center" dropShadow={true}>
           <div className="mt-[45.5px] pb-[45px]">
             <span className="__title font-[700] text-[18px]">
               Register with
@@ -124,6 +125,8 @@ function SignUp() {
             </div>
           </div>
         </Panel>
+
+        <FooterMenu />
       </div>
     </div>
   );
