@@ -1,0 +1,57 @@
+// Purpose: This code snippet demonstrates my proficiency in working with React, custom hooks, and context.
+
+import { createContext, useState, useEffect, useContext } from "react";
+
+// Create a new context object for navigation
+const NavigationContext = createContext();
+
+// The NavigationProvider component provides the navigation context to its children
+function NavigationProvider({ children }) {
+const [currentPath, setCurrentPath] = useState(window.location.pathname);
+
+useEffect(() => {
+    const handler = () => {
+        setCurrentPath(window.location.pathname);
+    };
+
+
+    window.addEventListener("popstate", handler);
+
+    return () => {
+    window.removeEventListener("popstate", handler);
+    };
+}, []);
+
+const navigate = (to) => {
+    window.history.pushState({}, "", to);
+    setCurrentPath(to);
+};
+
+return (
+        // Provide the currentPath and navigate functions to its children
+        <NavigationContext.Provider value={{ currentPath, navigate }}>
+        {children}
+        </NavigationContext.Provider>
+    );
+}
+
+// The Route component uses the useNavigation hook to get the current path from the navigation context
+function Route({ path, children }) {
+const { currentPath } = useNavigation();
+
+// If the current path matches the specified path, render the children components
+if (path === currentPath) return children;
+
+// If the current path does not match the specified path, return null (i.e. render nothing)
+return null;
+}
+
+// The useNavigation hook uses the useContext hook to get the navigation context object
+function useNavigation() {
+    return useContext(NavigationContext);
+}
+
+export { NavigationProvider, Route, useNavigation };
+export default NavigationContext;
+
+// This combined code snippet demonstrates my ability to create and use custom hooks and context in React to build reusable components. The NavigationProvider component provides the navigation context to its children, while the Route component uses the useNavigation hook to get the current path from the navigation context. This promotes code modularity and makes it easier to maintain and refactor the codebase in the future.

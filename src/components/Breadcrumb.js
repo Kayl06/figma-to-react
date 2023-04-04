@@ -11,16 +11,18 @@ import Link from "./Link";
 function Breadcrumb() {
   const { currentPath } = useNavigation();
 
+  const pageName = currentPath.replace(/[^a-zA-Z0-9]/g, "");
+
   return (
     <div className="__breadcrumb flex flex-col md:flex-row md:items-center justify-between mb-[29px]">
-      <div className="flex flex-col">
-        <div className="capitalize text-[12px] font-[400] flex gap-[5px] mb-[5px]">
+      <div className="flex flex-col capitalize">
+        <div className="text-[12px] font-[400] flex gap-[5px] mb-[5px]">
           <span className="text-[#A0AEC0]">Pages</span>
           <span> / </span>
-          <span>{currentPath.replace(/[^a-zA-Z0-9]/g, "")}</span>
+          <span>{pageName}</span>
         </div>
-        <span className="font-[700] text-[14px] capitalize">
-          {currentPath.replace(/[^a-zA-Z0-9]/g, "")}
+        <span className="font-[700] text-[14px]">
+          {pageName}
         </span>
       </div>
 
