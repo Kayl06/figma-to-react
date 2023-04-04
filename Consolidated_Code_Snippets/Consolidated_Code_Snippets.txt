@@ -6,52 +6,62 @@ import { createContext, useState, useEffect, useContext } from "react";
 const NavigationContext = createContext();
 
 // The NavigationProvider component provides the navigation context to its children
+import { createContext, useState, useEffect } from "react";
+
+const NavigationContext = createContext();
+
 function NavigationProvider({ children }) {
-const [currentPath, setCurrentPath] = useState(window.location.pathname);
+  const [currentPath, setCurrentPath] = useState(window.location.pathname);
 
-useEffect(() => {
+  useEffect(() => {
     const handler = () => {
-        setCurrentPath(window.location.pathname);
+      setCurrentPath(window.location.pathname);
     };
-
 
     window.addEventListener("popstate", handler);
 
     return () => {
-    window.removeEventListener("popstate", handler);
+      window.removeEventListener("popstate", handler);
     };
-}, []);
+  }, []);
 
-const navigate = (to) => {
+  const navigate = (to) => {
     window.history.pushState({}, "", to);
-    setCurrentPath(to);
-};
+    setCurrentPath(to)
+  };
 
-return (
-        // Provide the currentPath and navigate functions to its children
-        <NavigationContext.Provider value={{ currentPath, navigate }}>
-        {children}
-        </NavigationContext.Provider>
-    );
+  return (
+    // Provide the currentPath and navigate functions to its children
+    <NavigationContext.Provider value={{ currentPath, navigate }}>
+      {children}
+    </NavigationContext.Provider>
+  );
 }
+
+export { NavigationProvider };
+export default NavigationContext;
 
 // The Route component uses the useNavigation hook to get the current path from the navigation context
 function Route({ path, children }) {
-const { currentPath } = useNavigation();
+    const { currentPath } = useNavigation();
 
-// If the current path matches the specified path, render the children components
-if (path === currentPath) return children;
+    // If the current path matches the specified path, render the children components
+    if (path === currentPath) return children;
 
-// If the current path does not match the specified path, return null (i.e. render nothing)
-return null;
+    // If the current path does not match the specified path, return null (i.e. render nothing)
+    return null;
 }
+
+export default Route;
 
 // The useNavigation hook uses the useContext hook to get the navigation context object
+import { useContext } from "react";
+import NavigationContext from "../context/navigation";
+
 function useNavigation() {
-    return useContext(NavigationContext);
+  return useContext(NavigationContext);
 }
 
-export { NavigationProvider, Route, useNavigation };
-export default NavigationContext;
+export default useNavigation;
 
-// This combined code snippet demonstrates my ability to create and use custom hooks and context in React to build reusable components. The NavigationProvider component provides the navigation context to its children, while the Route component uses the useNavigation hook to get the current path from the navigation context. This promotes code modularity and makes it easier to maintain and refactor the codebase in the future.
+// These code snippets demonstrates my ability to create and use custom hooks and context in React to build reusable components. The NavigationProvider component provides the navigation context to its children, while the Route component uses the useNavigation hook to get the current path from the navigation context. This promotes code modularity and makes it easier to maintain and refactor the codebase in the future.
