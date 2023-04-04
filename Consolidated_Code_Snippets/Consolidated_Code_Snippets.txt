@@ -64,4 +64,4 @@ function useNavigation() {
 
 export default useNavigation;
 
-// These code snippets demonstrates my ability to create and use custom hooks and context in React to build reusable components. The NavigationProvider component provides the navigation context to its children, while the Route component uses the useNavigation hook to get the current path from the navigation context. This promotes code modularity and makes it easier to maintain and refactor the codebase in the future.
+// These code examples show how I can utilize React's context and custom hooks to build reusable components. The NavigationProvider component provides the navigation context to its children, while the Route component uses the useNavigation hook to get the current path from the navigation context. This promotes code modularity and makes it easier to maintain and refactor the codebase in the future.
